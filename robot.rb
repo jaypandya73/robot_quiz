@@ -1,28 +1,26 @@
 class Robot
+    ## THIS GIVES name METHOD so no NEED TO INITIALIZE name METHOD ##
     attr_reader :name
     
     def initialize
         @name = random_name
-       # @@name_reset = 
     end
+    
     #p @name
     #def name
      #  random_name          
     #end
     
     #def reset
-    #@@name_reset.delete(@name)
-    #@name = rendom_name
-    #end
-    #def reset
      #   if @name.empty?
        #     puts 'No name for Robot.'
      #   else
             #@name = nil
       #      @name = random_name
-      #  end
-            
+      #  end    
    # end
+   
+   ## REFACTORING OF ABOVE CODE ###
    def reset
         unless @name.empty?
             @name = random_name
@@ -37,11 +35,6 @@ class Robot
             dig = (1..3).map{('0'..'9').to_a[rand(9)]}.join
             generated = str + dig
             p generated
-            #if @@name_reset.add?(generated)
-            #    generated
-           # else
-           #     random_name
-           # end
         end
 end
 
